@@ -1,0 +1,2803 @@
+[
+  {
+    "fields": [
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image",
+        "title": "Upload"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": true,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Used if no file is uploaded.",
+        "name": "url",
+        "type": "url",
+        "title": "Or image URL"
+      },
+      {
+        "name": "alt",
+        "type": "string",
+        "title": "Alt text"
+      }
+    ],
+    "name": "siteImage",
+    "type": "object",
+    "title": "Image"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "label",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Internal path (/contact) or URL",
+        "name": "href",
+        "type": "string",
+        "title": "Link"
+      }
+    ],
+    "name": "ctaButton",
+    "type": "object",
+    "title": "Button"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "label",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "href",
+        "type": "string",
+        "title": "Path"
+      },
+      {
+        "initialValue": false,
+        "name": "mega",
+        "type": "boolean",
+        "title": "Show services mega menu"
+      }
+    ],
+    "name": "navLink",
+    "type": "object",
+    "title": "Navigation link"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "rows": 4,
+        "name": "body",
+        "type": "text",
+        "title": "Text"
+      }
+    ],
+    "name": "titledBody",
+    "type": "object",
+    "title": "Title & text"
+  },
+  {
+    "fields": [
+      {
+        "initialValue": "01",
+        "name": "step",
+        "type": "string",
+        "title": "Step number"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "rows": 4,
+        "name": "body",
+        "type": "text",
+        "title": "Description"
+      },
+      {
+        "name": "image",
+        "type": "siteImage"
+      }
+    ],
+    "name": "processStep",
+    "type": "object",
+    "title": "Process step"
+  },
+  {
+    "options": {
+      "list": [
+        {
+          "title": "Bot",
+          "value": "Bot"
+        },
+        {
+          "title": "Cloud",
+          "value": "Cloud"
+        },
+        {
+          "title": "Compass",
+          "value": "Compass"
+        },
+        {
+          "title": "Trending up",
+          "value": "TrendingUp"
+        },
+        {
+          "title": "Share",
+          "value": "Share2"
+        },
+        {
+          "title": "Search",
+          "value": "Search"
+        },
+        {
+          "title": "Smartphone",
+          "value": "Smartphone"
+        },
+        {
+          "title": "Database",
+          "value": "Database"
+        },
+        {
+          "title": "Users",
+          "value": "Users"
+        },
+        {
+          "title": "Award",
+          "value": "Award"
+        },
+        {
+          "title": "Headphones",
+          "value": "Headphones"
+        },
+        {
+          "title": "Layout dashboard",
+          "value": "LayoutDashboard"
+        },
+        {
+          "title": "Monitor / smartphone",
+          "value": "MonitorSmartphone"
+        },
+        {
+          "title": "House",
+          "value": "House"
+        },
+        {
+          "title": "User check",
+          "value": "UserCheck"
+        },
+        {
+          "title": "Shopping cart",
+          "value": "ShoppingCart"
+        },
+        {
+          "title": "Heart pulse",
+          "value": "HeartPulse"
+        },
+        {
+          "title": "Landmark",
+          "value": "Landmark"
+        },
+        {
+          "title": "Globe",
+          "value": "Globe"
+        },
+        {
+          "title": "Plane",
+          "value": "Plane"
+        },
+        {
+          "title": "Building",
+          "value": "Building2"
+        }
+      ],
+      "layout": "dropdown"
+    },
+    "validation": [
+      {
+        "rules": [
+          {
+            "flag": "valid",
+            "constraint": [
+              "Bot",
+              "Cloud",
+              "Compass",
+              "TrendingUp",
+              "Share2",
+              "Search",
+              "Smartphone",
+              "Database",
+              "Users",
+              "Award",
+              "Headphones",
+              "LayoutDashboard",
+              "MonitorSmartphone",
+              "House",
+              "UserCheck",
+              "ShoppingCart",
+              "HeartPulse",
+              "Landmark",
+              "Globe",
+              "Plane",
+              "Building2"
+            ]
+          }
+        ],
+        "level": "error"
+      }
+    ],
+    "name": "iconName",
+    "type": "string",
+    "title": "Icon"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Bot",
+              "value": "Bot"
+            },
+            {
+              "title": "Cloud",
+              "value": "Cloud"
+            },
+            {
+              "title": "Compass",
+              "value": "Compass"
+            },
+            {
+              "title": "Trending up",
+              "value": "TrendingUp"
+            },
+            {
+              "title": "Share",
+              "value": "Share2"
+            },
+            {
+              "title": "Search",
+              "value": "Search"
+            },
+            {
+              "title": "Smartphone",
+              "value": "Smartphone"
+            },
+            {
+              "title": "Database",
+              "value": "Database"
+            },
+            {
+              "title": "Users",
+              "value": "Users"
+            },
+            {
+              "title": "Award",
+              "value": "Award"
+            },
+            {
+              "title": "Headphones",
+              "value": "Headphones"
+            },
+            {
+              "title": "Layout dashboard",
+              "value": "LayoutDashboard"
+            },
+            {
+              "title": "Monitor / smartphone",
+              "value": "MonitorSmartphone"
+            },
+            {
+              "title": "House",
+              "value": "House"
+            },
+            {
+              "title": "User check",
+              "value": "UserCheck"
+            },
+            {
+              "title": "Shopping cart",
+              "value": "ShoppingCart"
+            },
+            {
+              "title": "Heart pulse",
+              "value": "HeartPulse"
+            },
+            {
+              "title": "Landmark",
+              "value": "Landmark"
+            },
+            {
+              "title": "Globe",
+              "value": "Globe"
+            },
+            {
+              "title": "Plane",
+              "value": "Plane"
+            },
+            {
+              "title": "Building",
+              "value": "Building2"
+            }
+          ]
+        },
+        "name": "icon",
+        "type": "string"
+      },
+      {
+        "name": "image",
+        "type": "siteImage"
+      }
+    ],
+    "name": "capabilityItem",
+    "type": "object",
+    "title": "Capability"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "rows": 4,
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Bot",
+              "value": "Bot"
+            },
+            {
+              "title": "Cloud",
+              "value": "Cloud"
+            },
+            {
+              "title": "Compass",
+              "value": "Compass"
+            },
+            {
+              "title": "Trending up",
+              "value": "TrendingUp"
+            },
+            {
+              "title": "Share",
+              "value": "Share2"
+            },
+            {
+              "title": "Search",
+              "value": "Search"
+            },
+            {
+              "title": "Smartphone",
+              "value": "Smartphone"
+            },
+            {
+              "title": "Database",
+              "value": "Database"
+            },
+            {
+              "title": "Users",
+              "value": "Users"
+            },
+            {
+              "title": "Award",
+              "value": "Award"
+            },
+            {
+              "title": "Headphones",
+              "value": "Headphones"
+            },
+            {
+              "title": "Layout dashboard",
+              "value": "LayoutDashboard"
+            },
+            {
+              "title": "Monitor / smartphone",
+              "value": "MonitorSmartphone"
+            },
+            {
+              "title": "House",
+              "value": "House"
+            },
+            {
+              "title": "User check",
+              "value": "UserCheck"
+            },
+            {
+              "title": "Shopping cart",
+              "value": "ShoppingCart"
+            },
+            {
+              "title": "Heart pulse",
+              "value": "HeartPulse"
+            },
+            {
+              "title": "Landmark",
+              "value": "Landmark"
+            },
+            {
+              "title": "Globe",
+              "value": "Globe"
+            },
+            {
+              "title": "Plane",
+              "value": "Plane"
+            },
+            {
+              "title": "Building",
+              "value": "Building2"
+            }
+          ]
+        },
+        "name": "icon",
+        "type": "string"
+      }
+    ],
+    "name": "whyChooseItem",
+    "type": "object",
+    "title": "Why choose us card"
+  },
+  {
+    "fields": [
+      {
+        "initialValue": "Excellanto",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "name",
+        "type": "string",
+        "title": "Company name"
+      },
+      {
+        "initialValue": "AI Powered IT Solutions & Staffing",
+        "name": "tagline",
+        "type": "string"
+      },
+      {
+        "rows": 5,
+        "name": "description",
+        "type": "text",
+        "title": "Company description"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "url",
+        "type": "url",
+        "title": "Website URL"
+      },
+      {
+        "name": "logo",
+        "type": "siteImage"
+      },
+      {
+        "name": "phone",
+        "type": "string",
+        "title": "Primary phone"
+      },
+      {
+        "name": "phoneSecondary",
+        "type": "string",
+        "title": "Secondary phone"
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "title": "Primary email"
+      },
+      {
+        "name": "emailSecondary",
+        "type": "string",
+        "title": "Secondary email"
+      },
+      {
+        "rows": 3,
+        "name": "address",
+        "type": "text"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "facebook",
+        "type": "url",
+        "title": "Facebook URL"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "instagram",
+        "type": "url",
+        "title": "Instagram URL"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "linkedin",
+        "type": "url",
+        "title": "LinkedIn URL"
+      },
+      {
+        "of": [
+          {
+            "type": "navLink",
+            "title": "Navigation link"
+          }
+        ],
+        "name": "navLinks",
+        "type": "array",
+        "title": "Header navigation"
+      },
+      {
+        "name": "headerCta",
+        "type": "ctaButton",
+        "title": "Header button"
+      },
+      {
+        "name": "primaryCta",
+        "type": "ctaButton",
+        "title": "Default primary button"
+      },
+      {
+        "name": "secondaryCta",
+        "type": "ctaButton",
+        "title": "Default secondary button"
+      },
+      {
+        "initialValue": "Services",
+        "name": "footerServicesTitle",
+        "type": "string",
+        "title": "Footer column: Services title"
+      },
+      {
+        "initialValue": "Quick Links",
+        "name": "footerCompanyTitle",
+        "type": "string",
+        "title": "Footer column: Quick links title"
+      },
+      {
+        "initialValue": "say hello",
+        "name": "footerResourcesTitle",
+        "type": "string",
+        "title": "Footer column: Resources title"
+      },
+      {
+        "of": [
+          {
+            "type": "navLink",
+            "title": "Navigation link"
+          }
+        ],
+        "name": "footerCompanyLinks",
+        "type": "array",
+        "title": "Footer quick links"
+      },
+      {
+        "of": [
+          {
+            "type": "navLink",
+            "title": "Navigation link"
+          }
+        ],
+        "name": "footerResourceLinks",
+        "type": "array",
+        "title": "Footer resource links"
+      },
+      {
+        "description": "Year is added automatically. Example: All Rights Reserved by Excellanto Ventures",
+        "name": "copyright",
+        "type": "string",
+        "title": "Copyright text"
+      },
+      {
+        "name": "footerTagline",
+        "type": "string",
+        "title": "Footer tagline"
+      },
+      {
+        "initialValue": "Skip to content",
+        "name": "skipToContent",
+        "type": "string",
+        "title": "Skip to content"
+      },
+      {
+        "initialValue": "View More",
+        "name": "viewMore",
+        "type": "string",
+        "title": "View more"
+      },
+      {
+        "initialValue": "View all services",
+        "name": "viewAllServices",
+        "type": "string",
+        "title": "View all services"
+      },
+      {
+        "initialValue": "Services",
+        "name": "backToServices",
+        "type": "string",
+        "title": "Back to services"
+      },
+      {
+        "initialValue": "Back to Blog",
+        "name": "backToBlog",
+        "type": "string",
+        "title": "Back to blog"
+      },
+      {
+        "initialValue": "Open menu",
+        "name": "openMenu",
+        "type": "string",
+        "title": "Open menu (accessibility)"
+      },
+      {
+        "initialValue": "Close menu",
+        "name": "closeMenu",
+        "type": "string",
+        "title": "Close menu (accessibility)"
+      },
+      {
+        "initialValue": "Excellanto home",
+        "name": "logoAriaLabel",
+        "type": "string",
+        "title": "Logo accessibility label"
+      },
+      {
+        "initialValue": "Services mega menu",
+        "name": "megaMenuAria",
+        "type": "string",
+        "title": "Services menu accessibility label"
+      },
+      {
+        "initialValue": "Service",
+        "name": "serviceEyebrow",
+        "type": "string",
+        "title": "Service page eyebrow"
+      },
+      {
+        "initialValue": "By",
+        "name": "byPrefix",
+        "type": "string",
+        "title": "Author prefix"
+      },
+      {
+        "initialValue": "Article",
+        "name": "articleFallbackTitle",
+        "type": "string",
+        "title": "Missing article title"
+      },
+      {
+        "initialValue": "Primary",
+        "name": "primaryNavAria",
+        "type": "string",
+        "title": "Primary nav accessibility label"
+      },
+      {
+        "initialValue": "Mobile",
+        "name": "mobileNavAria",
+        "type": "string",
+        "title": "Mobile nav accessibility label"
+      },
+      {
+        "name": "seoTitle",
+        "type": "string",
+        "title": "Default SEO title"
+      },
+      {
+        "rows": 3,
+        "name": "seoDescription",
+        "type": "text",
+        "title": "Default SEO description"
+      },
+      {
+        "initialValue": "Excellanto Ventures",
+        "name": "seoAuthor",
+        "type": "string",
+        "title": "SEO author"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "seoKeywords",
+        "type": "array",
+        "title": "SEO keywords"
+      }
+    ],
+    "name": "siteSettings",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "heroEyebrow",
+        "type": "string",
+        "title": "Eyebrow"
+      },
+      {
+        "name": "heroTitle",
+        "type": "string",
+        "title": "Headline"
+      },
+      {
+        "description": "Colored word at the end of the headline, e.g. Staffing",
+        "name": "heroHighlight",
+        "type": "string",
+        "title": "Highlighted word"
+      },
+      {
+        "name": "heroSubtitle",
+        "type": "string",
+        "title": "Subtitle"
+      },
+      {
+        "rows": 5,
+        "name": "heroBody",
+        "type": "text",
+        "title": "Paragraph"
+      },
+      {
+        "name": "heroPrimaryCta",
+        "type": "ctaButton",
+        "title": "Primary button"
+      },
+      {
+        "name": "heroSecondaryCta",
+        "type": "ctaButton",
+        "title": "Secondary button"
+      },
+      {
+        "name": "heroDashboardImage",
+        "type": "siteImage",
+        "title": "Dashboard preview image"
+      },
+      {
+        "name": "capabilitiesEyebrow",
+        "type": "string",
+        "title": "Eyebrow"
+      },
+      {
+        "name": "capabilitiesTitle",
+        "type": "string",
+        "title": "Title"
+      },
+      {
+        "of": [
+          {
+            "type": "capabilityItem",
+            "title": "Capability"
+          }
+        ],
+        "name": "capabilities",
+        "type": "array",
+        "title": "Capability cards"
+      },
+      {
+        "name": "valueEyebrow",
+        "type": "string",
+        "title": "Eyebrow"
+      },
+      {
+        "name": "valueTitle",
+        "type": "string",
+        "title": "Title"
+      },
+      {
+        "rows": 6,
+        "name": "valueBody",
+        "type": "text",
+        "title": "Paragraph"
+      },
+      {
+        "name": "valueCta",
+        "type": "ctaButton",
+        "title": "Button"
+      },
+      {
+        "name": "valueImage",
+        "type": "siteImage",
+        "title": "Image"
+      },
+      {
+        "name": "servicesEyebrow",
+        "type": "string",
+        "title": "Eyebrow"
+      },
+      {
+        "name": "servicesTitle",
+        "type": "string",
+        "title": "Title"
+      },
+      {
+        "name": "servicesAside",
+        "type": "string",
+        "title": "Aside text"
+      },
+      {
+        "name": "servicesViewMore",
+        "type": "string",
+        "title": "View more link text"
+      },
+      {
+        "name": "servicesViewMoreHref",
+        "type": "string",
+        "title": "View more link"
+      },
+      {
+        "initialValue": "View More",
+        "name": "servicesCardLink",
+        "type": "string",
+        "title": "Service card link"
+      },
+      {
+        "name": "processEyebrow",
+        "type": "string",
+        "title": "Eyebrow"
+      },
+      {
+        "name": "processTitle",
+        "type": "string",
+        "title": "Title"
+      },
+      {
+        "rows": 4,
+        "name": "processIntro",
+        "type": "text",
+        "title": "Introduction"
+      },
+      {
+        "of": [
+          {
+            "type": "processStep",
+            "title": "Process step"
+          }
+        ],
+        "name": "processSteps",
+        "type": "array",
+        "title": "Steps"
+      },
+      {
+        "name": "brandsEyebrow",
+        "type": "string",
+        "title": "Eyebrow"
+      },
+      {
+        "name": "brandsTitle",
+        "type": "string",
+        "title": "Title"
+      },
+      {
+        "name": "brandsBackground",
+        "type": "siteImage",
+        "title": "Background image"
+      },
+      {
+        "of": [
+          {
+            "type": "siteImage",
+            "title": "Image"
+          }
+        ],
+        "name": "brandLogos",
+        "type": "array",
+        "title": "Brand logos"
+      },
+      {
+        "name": "whyEyebrow",
+        "type": "string",
+        "title": "Eyebrow"
+      },
+      {
+        "name": "whyTitle",
+        "type": "string",
+        "title": "Title"
+      },
+      {
+        "rows": 5,
+        "name": "whyBody",
+        "type": "text",
+        "title": "Paragraph"
+      },
+      {
+        "name": "whyImage",
+        "type": "siteImage",
+        "title": "Image"
+      },
+      {
+        "name": "whyCta",
+        "type": "ctaButton",
+        "title": "Button"
+      },
+      {
+        "of": [
+          {
+            "type": "whyChooseItem",
+            "title": "Why choose us card"
+          }
+        ],
+        "name": "whyCards",
+        "type": "array",
+        "title": "Cards"
+      },
+      {
+        "name": "blogEyebrow",
+        "type": "string",
+        "title": "Eyebrow"
+      },
+      {
+        "name": "blogTitle",
+        "type": "string",
+        "title": "Title"
+      },
+      {
+        "name": "blogLinkLabel",
+        "type": "string",
+        "title": "Explore link label"
+      },
+      {
+        "name": "ctaEyebrow",
+        "type": "string",
+        "title": "Eyebrow"
+      },
+      {
+        "name": "ctaTitle",
+        "type": "string",
+        "title": "Title"
+      },
+      {
+        "name": "ctaImage",
+        "type": "siteImage",
+        "title": "Background image"
+      },
+      {
+        "name": "ctaPrimary",
+        "type": "ctaButton",
+        "title": "Primary button"
+      },
+      {
+        "name": "ctaSecondary",
+        "type": "ctaButton",
+        "title": "Secondary button"
+      },
+      {
+        "name": "testimonialsEyebrow",
+        "type": "string",
+        "title": "Eyebrow"
+      },
+      {
+        "name": "testimonialsTitle",
+        "type": "string",
+        "title": "Title"
+      },
+      {
+        "description": "Managed under Testimonials. Shown only if at least one is published.",
+        "of": [
+          {
+            "to": [
+              {
+                "type": "testimonial"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to testimonial"
+          }
+        ],
+        "name": "testimonials",
+        "type": "array"
+      }
+    ],
+    "name": "homepage",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "eyebrow",
+        "type": "string"
+      },
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "rows": 6,
+        "name": "intro",
+        "type": "text",
+        "title": "Introduction"
+      },
+      {
+        "name": "heroImage",
+        "type": "siteImage",
+        "title": "Hero image"
+      },
+      {
+        "name": "mission",
+        "type": "titledBody"
+      },
+      {
+        "name": "vision",
+        "type": "titledBody"
+      },
+      {
+        "name": "values",
+        "type": "titledBody",
+        "title": "Core values"
+      },
+      {
+        "name": "strengthsEyebrow",
+        "type": "string",
+        "title": "Strengths eyebrow"
+      },
+      {
+        "name": "strengthsTitle",
+        "type": "string",
+        "title": "Strengths title"
+      },
+      {
+        "rows": 5,
+        "name": "strengthsBody",
+        "type": "text",
+        "title": "Strengths text"
+      },
+      {
+        "name": "strengthsImage",
+        "type": "siteImage",
+        "title": "Strengths image"
+      },
+      {
+        "name": "techEyebrow",
+        "type": "string",
+        "title": "Technology eyebrow"
+      },
+      {
+        "name": "techTitle",
+        "type": "string",
+        "title": "Technology title"
+      },
+      {
+        "rows": 5,
+        "name": "techBody",
+        "type": "text",
+        "title": "Technology text"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "techHighlights",
+        "type": "array",
+        "title": "Highlights"
+      },
+      {
+        "name": "techImage",
+        "type": "siteImage",
+        "title": "Technology image"
+      },
+      {
+        "name": "seoTitle",
+        "type": "string",
+        "title": "SEO title"
+      },
+      {
+        "rows": 3,
+        "name": "seoDescription",
+        "type": "text",
+        "title": "SEO description"
+      }
+    ],
+    "name": "aboutPage",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "eyebrow",
+        "type": "string",
+        "title": "Hero eyebrow"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "title": "Hero title"
+      },
+      {
+        "name": "heroImage",
+        "type": "siteImage",
+        "title": "Hero image"
+      },
+      {
+        "name": "officeImage",
+        "type": "siteImage",
+        "title": "Office image"
+      },
+      {
+        "name": "infoEyebrow",
+        "type": "string",
+        "title": "Info eyebrow"
+      },
+      {
+        "name": "infoTitle",
+        "type": "string",
+        "title": "Info title"
+      },
+      {
+        "name": "addressLabel",
+        "type": "string",
+        "title": "Address label"
+      },
+      {
+        "name": "phoneLabel",
+        "type": "string",
+        "title": "Phone label"
+      },
+      {
+        "name": "emailLabel",
+        "type": "string",
+        "title": "Email label"
+      },
+      {
+        "name": "formEyebrow",
+        "type": "string",
+        "title": "Form eyebrow"
+      },
+      {
+        "name": "formTitle",
+        "type": "string",
+        "title": "Form title"
+      },
+      {
+        "rows": 3,
+        "name": "formBody",
+        "type": "text",
+        "title": "Form introduction"
+      },
+      {
+        "name": "firstNameLabel",
+        "type": "string",
+        "title": "First name label"
+      },
+      {
+        "name": "lastNameLabel",
+        "type": "string",
+        "title": "Last name label"
+      },
+      {
+        "name": "emailFieldLabel",
+        "type": "string",
+        "title": "Email field label"
+      },
+      {
+        "name": "messageLabel",
+        "type": "string",
+        "title": "Message field label"
+      },
+      {
+        "name": "submitLabel",
+        "type": "string",
+        "title": "Submit button"
+      },
+      {
+        "name": "successTitle",
+        "type": "string",
+        "title": "Success title"
+      },
+      {
+        "rows": 3,
+        "name": "successBody",
+        "type": "text",
+        "title": "Success message"
+      },
+      {
+        "name": "successResetLabel",
+        "type": "string",
+        "title": "Success reset button"
+      },
+      {
+        "name": "seoTitle",
+        "type": "string",
+        "title": "SEO title"
+      },
+      {
+        "rows": 3,
+        "name": "seoDescription",
+        "type": "text",
+        "title": "SEO description"
+      }
+    ],
+    "name": "contactPage",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "eyebrow",
+        "type": "string",
+        "title": "Hero eyebrow"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "title": "Hero title"
+      },
+      {
+        "name": "heroImage",
+        "type": "siteImage",
+        "title": "Hero image"
+      },
+      {
+        "name": "viewMore",
+        "type": "string",
+        "title": "View more text"
+      },
+      {
+        "initialValue": "Services",
+        "name": "categoryEyebrow",
+        "type": "string",
+        "title": "Category eyebrow"
+      },
+      {
+        "initialValue": "View More",
+        "name": "cardLinkLabel",
+        "type": "string",
+        "title": "Card link label"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Development",
+                      "value": "development"
+                    },
+                    {
+                      "title": "AI, Cloud & Consulting",
+                      "value": "ai-cloud"
+                    },
+                    {
+                      "title": "Digital Marketing",
+                      "value": "marketing"
+                    },
+                    {
+                      "title": "Staffing",
+                      "value": "talent"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "development",
+                          "ai-cloud",
+                          "marketing",
+                          "talent"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "id",
+                "type": "string",
+                "title": "ID"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "title",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "categories",
+        "type": "array",
+        "title": "Service groups"
+      },
+      {
+        "name": "seoTitle",
+        "type": "string",
+        "title": "SEO title"
+      },
+      {
+        "rows": 3,
+        "name": "seoDescription",
+        "type": "text",
+        "title": "SEO description"
+      }
+    ],
+    "name": "servicesPage",
+    "type": "document",
+    "title": "Services Index"
+  },
+  {
+    "fields": [
+      {
+        "name": "eyebrow",
+        "type": "string",
+        "title": "Hero eyebrow"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "title": "Hero title"
+      },
+      {
+        "name": "heroImage",
+        "type": "siteImage",
+        "title": "Hero image"
+      },
+      {
+        "rows": 2,
+        "name": "emptyMessage",
+        "type": "text",
+        "title": "Empty state message"
+      },
+      {
+        "name": "readMoreLabel",
+        "type": "string",
+        "title": "Read more label"
+      },
+      {
+        "initialValue": "Back to Blog",
+        "name": "backToBlog",
+        "type": "string",
+        "title": "Back to blog"
+      },
+      {
+        "initialValue": "By",
+        "name": "byPrefix",
+        "type": "string",
+        "title": "Author prefix"
+      },
+      {
+        "initialValue": "Article",
+        "name": "articleFallbackTitle",
+        "type": "string",
+        "title": "Missing article title"
+      },
+      {
+        "name": "seoTitle",
+        "type": "string",
+        "title": "SEO title"
+      },
+      {
+        "rows": 3,
+        "name": "seoDescription",
+        "type": "text",
+        "title": "SEO description"
+      }
+    ],
+    "name": "blogPage",
+    "type": "document",
+    "title": "Blog Listing"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "initialValue": "Legal",
+        "name": "eyebrow",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "rows": 3,
+        "name": "description",
+        "type": "text",
+        "title": "Hero description"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bulleted list"
+              },
+              {
+                "value": "number",
+                "title": "Numbered list"
+              }
+            ],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h1",
+                "title": "Heading 1"
+              },
+              {
+                "value": "h2",
+                "title": "Heading 2"
+              },
+              {
+                "value": "h3",
+                "title": "Heading 3"
+              },
+              {
+                "value": "h4",
+                "title": "Heading 4"
+              },
+              {
+                "value": "h5",
+                "title": "Heading 5"
+              },
+              {
+                "value": "h6",
+                "title": "Heading 6"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "content",
+        "type": "array"
+      },
+      {
+        "name": "seoTitle",
+        "type": "string",
+        "title": "SEO title"
+      },
+      {
+        "rows": 3,
+        "name": "seoDescription",
+        "type": "text",
+        "title": "SEO description"
+      }
+    ],
+    "name": "legalPage",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "name": "shortTitle",
+        "type": "string",
+        "title": "Short title (menus)"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Development",
+              "value": "development"
+            },
+            {
+              "title": "AI, Cloud & Consulting",
+              "value": "ai-cloud"
+            },
+            {
+              "title": "Digital Marketing",
+              "value": "marketing"
+            },
+            {
+              "title": "Staffing",
+              "value": "talent"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "development",
+                  "ai-cloud",
+                  "marketing",
+                  "talent"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Bot",
+              "value": "Bot"
+            },
+            {
+              "title": "Cloud",
+              "value": "Cloud"
+            },
+            {
+              "title": "Compass",
+              "value": "Compass"
+            },
+            {
+              "title": "Trending up",
+              "value": "TrendingUp"
+            },
+            {
+              "title": "Share",
+              "value": "Share2"
+            },
+            {
+              "title": "Search",
+              "value": "Search"
+            },
+            {
+              "title": "Smartphone",
+              "value": "Smartphone"
+            },
+            {
+              "title": "Database",
+              "value": "Database"
+            },
+            {
+              "title": "Users",
+              "value": "Users"
+            },
+            {
+              "title": "Award",
+              "value": "Award"
+            },
+            {
+              "title": "Headphones",
+              "value": "Headphones"
+            },
+            {
+              "title": "Layout dashboard",
+              "value": "LayoutDashboard"
+            },
+            {
+              "title": "Monitor / smartphone",
+              "value": "MonitorSmartphone"
+            },
+            {
+              "title": "House",
+              "value": "House"
+            },
+            {
+              "title": "User check",
+              "value": "UserCheck"
+            },
+            {
+              "title": "Shopping cart",
+              "value": "ShoppingCart"
+            },
+            {
+              "title": "Heart pulse",
+              "value": "HeartPulse"
+            },
+            {
+              "title": "Landmark",
+              "value": "Landmark"
+            },
+            {
+              "title": "Globe",
+              "value": "Globe"
+            },
+            {
+              "title": "Plane",
+              "value": "Plane"
+            },
+            {
+              "title": "Building",
+              "value": "Building2"
+            }
+          ]
+        },
+        "name": "icon",
+        "type": "string"
+      },
+      {
+        "initialValue": false,
+        "name": "featured",
+        "type": "boolean",
+        "title": "Show on homepage"
+      },
+      {
+        "initialValue": 0,
+        "name": "sortOrder",
+        "type": "number",
+        "title": "Display order"
+      },
+      {
+        "name": "megaDescription",
+        "type": "string",
+        "title": "Mega menu description"
+      },
+      {
+        "rows": 4,
+        "name": "description",
+        "type": "text",
+        "title": "Short description"
+      },
+      {
+        "name": "image",
+        "type": "siteImage"
+      },
+      {
+        "rows": 5,
+        "name": "detailIntro",
+        "type": "text",
+        "title": "Detail introduction"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "features",
+        "type": "array"
+      },
+      {
+        "name": "bannerEyebrow",
+        "type": "string",
+        "title": "Banner eyebrow"
+      },
+      {
+        "initialValue": "Services",
+        "name": "backLabel",
+        "type": "string",
+        "title": "Back link label"
+      },
+      {
+        "initialValue": "View More",
+        "name": "cardLinkLabel",
+        "type": "string",
+        "title": "Card link label"
+      },
+      {
+        "name": "sidebarTitle",
+        "type": "string",
+        "title": "Sidebar title"
+      },
+      {
+        "rows": 3,
+        "name": "sidebarBody",
+        "type": "text",
+        "title": "Sidebar text"
+      },
+      {
+        "name": "sidebarCta",
+        "type": "ctaButton",
+        "title": "Sidebar button"
+      },
+      {
+        "name": "pageCta",
+        "type": "ctaButton",
+        "title": "Page button"
+      },
+      {
+        "hidden": "conditional",
+        "name": "mobileHeroEyebrow",
+        "type": "string",
+        "title": "Hero eyebrow"
+      },
+      {
+        "hidden": "conditional",
+        "name": "mobileHeroTitle",
+        "type": "string",
+        "title": "Hero title"
+      },
+      {
+        "hidden": "conditional",
+        "name": "mobileHeroImage",
+        "type": "siteImage",
+        "title": "Hero image"
+      },
+      {
+        "of": [
+          {
+            "type": "titledBody",
+            "title": "Title & text"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "mobileWhyChoose",
+        "type": "array",
+        "title": "Why choose cards"
+      },
+      {
+        "hidden": "conditional",
+        "name": "mobileProcessEyebrow",
+        "type": "string",
+        "title": "Process eyebrow"
+      },
+      {
+        "hidden": "conditional",
+        "name": "mobileProcessTitle",
+        "type": "string",
+        "title": "Process title"
+      },
+      {
+        "rows": 4,
+        "hidden": "conditional",
+        "name": "mobileProcessIntro",
+        "type": "text",
+        "title": "Process intro"
+      },
+      {
+        "of": [
+          {
+            "type": "processStep",
+            "title": "Process step"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "mobileProcessSteps",
+        "type": "array",
+        "title": "Process steps"
+      },
+      {
+        "hidden": "conditional",
+        "name": "mobileBrandsTitle",
+        "type": "string",
+        "title": "Brands title"
+      },
+      {
+        "hidden": "conditional",
+        "name": "mobileIndustriesEyebrow",
+        "type": "string",
+        "title": "Industries eyebrow"
+      },
+      {
+        "hidden": "conditional",
+        "name": "mobileIndustriesTitle",
+        "type": "string",
+        "title": "Industries title"
+      },
+      {
+        "rows": 4,
+        "hidden": "conditional",
+        "name": "mobileIndustriesIntro",
+        "type": "text",
+        "title": "Industries intro"
+      },
+      {
+        "hidden": "conditional",
+        "name": "mobileIndustriesImage",
+        "type": "siteImage",
+        "title": "Industries image"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Bot",
+                      "value": "Bot"
+                    },
+                    {
+                      "title": "Cloud",
+                      "value": "Cloud"
+                    },
+                    {
+                      "title": "Compass",
+                      "value": "Compass"
+                    },
+                    {
+                      "title": "Trending up",
+                      "value": "TrendingUp"
+                    },
+                    {
+                      "title": "Share",
+                      "value": "Share2"
+                    },
+                    {
+                      "title": "Search",
+                      "value": "Search"
+                    },
+                    {
+                      "title": "Smartphone",
+                      "value": "Smartphone"
+                    },
+                    {
+                      "title": "Database",
+                      "value": "Database"
+                    },
+                    {
+                      "title": "Users",
+                      "value": "Users"
+                    },
+                    {
+                      "title": "Award",
+                      "value": "Award"
+                    },
+                    {
+                      "title": "Headphones",
+                      "value": "Headphones"
+                    },
+                    {
+                      "title": "Layout dashboard",
+                      "value": "LayoutDashboard"
+                    },
+                    {
+                      "title": "Monitor / smartphone",
+                      "value": "MonitorSmartphone"
+                    },
+                    {
+                      "title": "House",
+                      "value": "House"
+                    },
+                    {
+                      "title": "User check",
+                      "value": "UserCheck"
+                    },
+                    {
+                      "title": "Shopping cart",
+                      "value": "ShoppingCart"
+                    },
+                    {
+                      "title": "Heart pulse",
+                      "value": "HeartPulse"
+                    },
+                    {
+                      "title": "Landmark",
+                      "value": "Landmark"
+                    },
+                    {
+                      "title": "Globe",
+                      "value": "Globe"
+                    },
+                    {
+                      "title": "Plane",
+                      "value": "Plane"
+                    },
+                    {
+                      "title": "Building",
+                      "value": "Building2"
+                    }
+                  ]
+                },
+                "name": "icon",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "mobileIndustries",
+        "type": "array",
+        "title": "Industries"
+      },
+      {
+        "hidden": "conditional",
+        "name": "websiteHeroEyebrow",
+        "type": "string",
+        "title": "Hero eyebrow"
+      },
+      {
+        "hidden": "conditional",
+        "name": "websiteHeroTitle",
+        "type": "string",
+        "title": "Hero title"
+      },
+      {
+        "hidden": "conditional",
+        "name": "websiteHeroImage",
+        "type": "siteImage",
+        "title": "Hero image"
+      },
+      {
+        "hidden": "conditional",
+        "name": "websiteOfferingsTitle",
+        "type": "string",
+        "title": "Offerings title"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "rows": 3,
+                "name": "body",
+                "type": "text",
+                "title": "Text"
+              },
+              {
+                "name": "image",
+                "type": "siteImage"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "websiteOfferings",
+        "type": "array",
+        "title": "Offerings"
+      },
+      {
+        "hidden": "conditional",
+        "name": "websiteWhyTitle",
+        "type": "string",
+        "title": "Why choose title"
+      },
+      {
+        "of": [
+          {
+            "type": "titledBody",
+            "title": "Title & text"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "websiteWhyChoose",
+        "type": "array",
+        "title": "Why choose cards"
+      },
+      {
+        "of": [
+          {
+            "type": "processStep",
+            "title": "Process step"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "websiteProcessSteps",
+        "type": "array",
+        "title": "Process steps"
+      },
+      {
+        "hidden": "conditional",
+        "name": "websiteRedesignEyebrow",
+        "type": "string",
+        "title": "Redesign eyebrow"
+      },
+      {
+        "hidden": "conditional",
+        "name": "websiteRedesignTitle",
+        "type": "string",
+        "title": "Redesign title"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "websiteRedesignItems",
+        "type": "array",
+        "title": "Redesign items"
+      },
+      {
+        "hidden": "conditional",
+        "name": "websiteRedesignImage",
+        "type": "siteImage",
+        "title": "Redesign image"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "websiteHighlights",
+        "type": "array",
+        "title": "Highlights"
+      },
+      {
+        "hidden": "conditional",
+        "name": "websiteHighlightsImage",
+        "type": "siteImage",
+        "title": "Highlights image"
+      },
+      {
+        "hidden": "conditional",
+        "name": "websiteDiscoverMore",
+        "type": "string",
+        "title": "Discover more label"
+      },
+      {
+        "name": "seoTitle",
+        "type": "string",
+        "title": "SEO title"
+      },
+      {
+        "rows": 3,
+        "name": "seoDescription",
+        "type": "text",
+        "title": "SEO description"
+      }
+    ],
+    "name": "service",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "rows": 4,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "quote",
+        "type": "text"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "role",
+        "type": "string",
+        "title": "Role / company"
+      },
+      {
+        "name": "image",
+        "type": "siteImage",
+        "title": "Photo"
+      },
+      {
+        "initialValue": true,
+        "name": "isPublished",
+        "type": "boolean",
+        "title": "Published"
+      }
+    ],
+    "name": "testimonial",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "fields": [
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "warning",
+                "message": "Alt text improves accessibility and SEO"
+              }
+            ],
+            "name": "alt",
+            "type": "string",
+            "title": "Alt text"
+          }
+        ],
+        "name": "featuredImage",
+        "type": "image"
+      },
+      {
+        "rows": 4,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 500
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "excerpt",
+        "type": "text",
+        "title": "Short Description / Excerpt"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "name": "href",
+                      "type": "url",
+                      "title": "URL"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Bold"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                }
+              ]
+            },
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bullet"
+              },
+              {
+                "value": "number",
+                "title": "Numbered"
+              }
+            ],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h2",
+                "title": "H2"
+              },
+              {
+                "value": "h3",
+                "title": "H3"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          },
+          {
+            "options": {
+              "hotspot": true
+            },
+            "fields": [
+              {
+                "name": "alt",
+                "type": "string",
+                "title": "Alt text"
+              }
+            ],
+            "type": "image"
+          }
+        ],
+        "name": "content",
+        "type": "array"
+      },
+      {
+        "to": [
+          {
+            "type": "author"
+          }
+        ],
+        "name": "author",
+        "type": "reference"
+      },
+      {
+        "to": [
+          {
+            "type": "category"
+          }
+        ],
+        "name": "category",
+        "type": "reference"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "publishedDate",
+        "type": "datetime"
+      },
+      {
+        "options": {
+          "layout": "tags"
+        },
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "tags",
+        "type": "array"
+      },
+      {
+        "initialValue": false,
+        "description": "Only published blogs appear on the website.",
+        "name": "isPublished",
+        "type": "boolean",
+        "title": "Published"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 70
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "seoTitle",
+        "type": "string",
+        "title": "SEO Title"
+      },
+      {
+        "rows": 3,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 160
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "seoDescription",
+        "type": "text",
+        "title": "SEO Description"
+      }
+    ],
+    "name": "blog",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "rows": 3,
+        "name": "bio",
+        "type": "text"
+      }
+    ],
+    "name": "author",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      }
+    ],
+    "name": "category",
+    "type": "document"
+  }
+]

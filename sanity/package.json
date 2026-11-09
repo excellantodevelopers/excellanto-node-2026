@@ -1,0 +1,22 @@
+{
+  "name": "excellanto-sanity-studio",
+  "private": true,
+  "scripts": {
+    "dev": "node run-cli.cjs dev",
+    "deploy": "node run-cli.cjs deploy -y",
+    "seed": "node scripts/seed-cms.mjs",
+    "import-images": "node scripts/import-remote-images.mjs"
+  },
+  "dependencies": {
+    "@sanity/assist": "3.2.2",
+    "@sanity/client": "^7.26.2",
+    "@sanity/orderable-document-list": "1.5.1",
+    "@sanity/vision": "3.99.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sanity": "3.99.0",
+    "sanity-plugin-asset-source-unsplash": "3.0.4",
+    "sanity-plugin-media": "4.3.6",
+    "styled-components": "^6.1.19"
+  }
+}

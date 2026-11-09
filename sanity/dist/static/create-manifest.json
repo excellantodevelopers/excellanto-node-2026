@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "createdAt": "2026-08-17T08:50:47.421Z",
+  "workspaces": [
+    {
+      "name": "excellanto-cms",
+      "title": "Excellanto CMS",
+      "basePath": "/",
+      "projectId": "5iomjfqk",
+      "dataset": "production",
+      "icon": "<style data-styled=\"true\" data-styled-version=\"6.5.2\">.jedUXb{font-family:Inter,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",\"Liberation Sans\",Helvetica,Arial,system-ui,sans-serif;font-weight:500;font-size:13px;transform:translateY(1px);}/*!sc*/\ndata-styled.g114[id=\"sc-folTtG\"]{content:\"jedUXb,\"}/*!sc*/\n</style><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><rect width=\"32\" height=\"32\" rx=\"2\" fill=\"#556bfc\"></rect><text x=\"50%\" y=\"50%\" text-anchor=\"middle\" alignment-baseline=\"middle\" fill=\"hsla(232, 97%, 26%, 1)\" class=\"sc-folTtG jedUXb\">EC</text></svg>",
+      "schema": "ea8f9fc5.create-schema.json",
+      "tools": "7cac97d3.create-tools.json"
+    }
+  ]
+}
